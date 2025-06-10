@@ -1,3 +1,45 @@
+Overview
+Market basket analysis is a data mining technique that helps businesses understand customer purchasing habits. By identifying items that are frequently purchased together, businesses can make informed decisions regarding product placement, promotional strategies, and inventory management.
+
+This project utilizes the mlxtend library in Python to:
+
+Find frequent itemsets based on a minimum support threshold.
+Generate association rules from these frequent itemsets, filtered by minimum lift and confidence thresholds.
+Dataset
+The analysis is performed on the AppleCart.xlsx Excel file. This dataset is expected to be in a transactional format, where each row represents a transaction and columns represent different products. A value of 1 indicates the presence of a product in the transaction, and 0 indicates its absence.
+
+Requirements
+To run this code, you'll need the following Python libraries:
+
+pandas: For data manipulation and reading the Excel file.
+mlxtend: For implementing the Apriori algorithm and generating association rules.
+You can install these libraries using pip:
+
+pip install pandas mlxtend openpyxl
+Note: openpyxl is required by pandas to read .xlsx files.
+
+Usage
+Clone the repository (or download the files):
+git clone <repository_url>
+cd AppleCart-Market-Basket-Analysis
+Place the AppleCart.xlsx file in the same directory as the Python script.
+Run the Python script:
+python your_script_name.py
+(Replace your_script_name.py with the actual name of your Python file.)
+The script will output the filtered association rules to the console.
+
+Analysis Details
+The analysis involves the following steps:
+
+Data Loading: The AppleCart.xlsx file is loaded into a pandas DataFrame.
+Apriori Algorithm: The apriori function from mlxtend is used to find itemsets that meet a specified minimum support (minimum_required_support = 0.1). Support is the proportion of transactions that contain the itemset.
+Association Rule Generation: The association_rules function is then applied to the frequent itemsets to generate rules. These rules are evaluated based on:
+Lift: A measure of how much more likely two items are to be purchased together compared to their individual purchase probabilities. A minimum_required_lift = 1.1 is set.
+Confidence: The probability that a customer will buy the consequent item, given that they have bought the antecedent item. A minimum_required_confidence = 0.5 is set.
+Results
+The script will output a pandas DataFrame containing the association rules that satisfy all the defined thresholds (support, lift, and confidence). Each row in the output represents a rule, showing the antecedent (the item(s) on the "if" side), the consequent (the item(s) on the "then" side), and various metrics like support, confidence, and lift.
+
+
 Business Decision: Target Subsets of Customers for Sending Deal Information
 
 The primary goal here is to segment customers based on their purchasing habits of Pinot Noir and Champagne. By understanding these segments, Chateau can tailor deal information to specific customer groups, increasing the effectiveness of their marketing efforts and ultimately driving more sales.
