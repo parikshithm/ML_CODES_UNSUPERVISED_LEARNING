@@ -115,3 +115,71 @@ Actionable Insights and Recommendations:
 Based on the supplier profiles, develop concrete recommendations for business decisions. For example, if a "High Cost, Low Service" segment is identified, strategies for negotiation or seeking alternative suppliers can be recommended.
 Identify top-performing suppliers in specific areas.
 By following these steps, you can build a comprehensive understanding of your supplier base, enabling more strategic and efficient procurement decisions.
+
+Insurance Claims Analysis
+This project performs an exploratory data analysis (EDA) on an insurance claims dataset. The primary goal is to understand the characteristics of the data, identify potential issues, and prepare it for further modeling.
+
+📊 Dataset
+The dataset used is insurance_part2_data.csv. It contains 3000 rows and 10 columns with information related to various insurance claims.
+
+📂 Project Structure
+insurance_part2_data.csv: The raw dataset used for the analysis.
+
+Jupyter Notebook / Python Script: This file contains the code for data loading, initial exploration, univariate analysis, and visualizations.
+
+🔍 Key Findings from Initial Analysis
+Data Overview
+
+The dataset comprises 3000 entries and 10 features.
+
+Memory usage is approximately 234.5 KB, indicating a relatively small dataset.
+
+Crucially, no missing values were found across any columns, which simplifies the initial cleaning process.
+
+Data Types
+
+The features are categorized into:
+
+Numerical: Age, Commision, Duration, Sales
+
+Categorical: Agency_Code, Type, Claimed, Channel, Product Name, Destination
+
+Descriptive Statistics (Numerical Columns)
+
+Age: Ranges from 8 to 84 years, with an average of approximately 38 years.
+
+Commision: Ranges from 0 to 210.21, averaging around 14.53. The spread in values indicates variability in commission amounts.
+
+Duration: Shows a wide range from -1 to 4580. The minimum value of -1 is an anomaly that requires further investigation and handling, as a negative duration is illogical. The average duration is about 70.
+
+Sales: Ranges from 0 to 539, with an average of 60.25. Sales values also exhibit significant variability.
+
+🚀 Next Steps
+Based on the initial findings, the following steps are planned:
+
+Data Cleaning:
+
+Address the anomalous -1 value in the Duration column. This may involve removing the affected rows, imputing the values, or transforming them based on domain knowledge.
+
+Univariate Analysis (Visualizations):
+
+Generate histograms and box plots for numerical features (Age, Commision, Duration, Sales) to better understand their distributions, identify outliers, and check for skewness.
+
+Create bar plots for categorical features (Agency_Code, Type, Claimed, Channel, Product Name, Destination) to visualize the frequency and distribution of each category.
+
+Bivariate and Multivariate Analysis:
+
+Explore relationships between pairs of variables (bivariate) and multiple variables (multivariate) to uncover deeper insights, correlations, and prepare the data for predictive modeling.
+
+🏃‍♀️ How to Run
+To run this analysis, follow these steps:
+
+Prerequisites: Ensure you have Python installed on your system.
+
+Libraries: Install the required Python libraries using pip:
+
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+Dataset Placement: Place the insurance_part2_data.csv file in the same directory as your Python script or Jupyter Notebook.
+
+Execution: Open the Jupyter Notebook or run the Python script to reproduce the analysis.
